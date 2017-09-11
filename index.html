@@ -1,0 +1,26 @@
+<html>
+<body>
+    <h1>Students</h1>
+    <ul id="main">
+        <!-- this is empty-->
+    </ul> 
+    <button id='appendbutton' onclick="wrapAPL();">Click me</button>
+<script>
+    function appendList(array, id){
+        for (let idx = 0; idx < array.length; idx++){
+            console.log(array[idx]);
+            let name = document.createTextNode(array[idx]);
+            let li = document.createElement('li');
+            li.appendChild(name);
+            document.getElementById(id).appendChild(li);
+        }
+    };
+    function wrapAPL(){
+        var students = ["Jeff", "Jenny", "Javier", "Joslyn", "Joe", "Jane", "Django"];
+        var target_id = "main";
+        return appendList(students, target_id);
+    }
+    // appendList(students, target_id);
+</script>   
+</body>
+</html>
